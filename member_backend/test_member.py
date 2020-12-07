@@ -1,5 +1,5 @@
 from unittest.mock import Mock
-from member_backend.member import *
+from member import *
 
 def test_web_index():
     assert hello() == "Hello Member System"

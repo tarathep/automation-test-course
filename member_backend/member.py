@@ -1,44 +1,31 @@
 from bottle import Bottle, Route, run,response,request
 import json
+import db
 
 app = Bottle()
 
-#  INIT DATA
-member1={
-    "id":"10001",
-    "firstName":"Marry",
-    "lastName":"Jane",
-    "role":"Admin",
-    "email":"j.marry@domain.com",
-    "password":"P@ssw0rd",
-}
-member2={
-    "id":"10002",
-    "firstName":"Somkiet",
-    "lastName":"Poosungnern",
-    "role":"Developer",
-    "email":"p.somkiet@domain.com",
-    "password":"P@ssw0rd",
-}
-
-members=[]
-members.append(member1)
-members.append(member2)
-
+#INIT LOAD DATA
+members = db.members
 
 @app.route('/')
 def hello():
+    print("----> GET Hello Member System")
     return 'Hello Member System'
 
 @app.route('/members', method='GET')
 def getMember():
+    
+    print("----> GET MEMBER(S)")
+    
     response.content_type="application/json"
     return json.dumps({'members':members})
 
 @app.route('/members/<id>' ,method='GET')
 def getMemberById(id):
     response.content_type="application/json"
-    print(id)
+    
+    print("----> GET MEMBER BY ID = "+id)
+    
     for inx,i in enumerate(members):
         if(i["id"]==id):
             return json.dumps({'members':members[inx]})
@@ -47,7 +34,9 @@ def getMemberById(id):
 @app.route('/members/<id>' ,method='DELETE')
 def deleteMemberById(id):
     response.content_type="application/json"
-    print(id)
+    
+    print("----> DELETE MEMBER BY ID = "+id)
+    
     for inx,i in enumerate(members):
         if(i["id"]==id):
             members.remove(i)
@@ -59,9 +48,10 @@ def deleteMemberById(id):
 def addMember():
     reqBody = request.body.getvalue().decode('utf-8')
     addData = json.loads(reqBody)
-    print("------------------>",addData)
 
-    # FIND ID FOR UPDATE
+    print("----> ADD MEMBER DATA = "+addData)
+
+    # FIND ID FOR IS DUPLICATE?
     for i in members:
         if(i["id"]==addData["id"]):
             return json.dumps({'id':addData["id"],'status':'add','message':'duplicate id'})
@@ -72,7 +62,8 @@ def addMember():
 def editMember():
     reqBody = request.body.getvalue().decode('utf-8')
     updateData = json.loads(reqBody)
-    print("------------------>",updateData)
+
+    print("----> UPDATE MEMBER DATA = "+updateData)
 
     # FIND ID FOR UPDATE
     for inx,i in enumerate(members):
@@ -86,7 +77,8 @@ def editMember():
 def auth():
     reqBody = request.body.getvalue().decode('utf-8')
     authData = json.loads(reqBody)
-    print(authData)
+
+    print("----> AUTH MEMBER  = ",authData)
 
     for inx,i in enumerate(members):
         if(i["email"]==authData["username"] and i["password"]==authData["password"]):
