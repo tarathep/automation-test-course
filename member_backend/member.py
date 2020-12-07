@@ -49,7 +49,7 @@ def addMember():
     reqBody = request.body.getvalue().decode('utf-8')
     addData = json.loads(reqBody)
 
-    print("----> ADD MEMBER DATA = "+addData)
+    print("----> ADD MEMBER DATA = ",addData)
 
     # FIND ID FOR IS DUPLICATE?
     for i in members:
@@ -63,7 +63,7 @@ def editMember():
     reqBody = request.body.getvalue().decode('utf-8')
     updateData = json.loads(reqBody)
 
-    print("----> UPDATE MEMBER DATA = "+updateData)
+    print("----> UPDATE MEMBER DATA = ",updateData)
 
     # FIND ID FOR UPDATE
     for inx,i in enumerate(members):
