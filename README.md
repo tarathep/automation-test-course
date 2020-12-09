@@ -1,7 +1,7 @@
 # automation-test-course ATDD with Robot Framework
 
 ## Slide
-<img src="">
+<img src="https://raw.githubusercontent.com/tarathep/automation-test-course/main/label.JPG" width=50%>
 
 ## Agenda
 - Software Testing Basic
