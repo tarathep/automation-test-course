@@ -7,4 +7,4 @@
 1. goto frontend at http://localhost:5000 
 2. show on browser push button F12 or open Dev mode on browser
 3. find html element such as id , name , css for ref 
-4. write robot file(s)
+4. write robot file workshop6.robot
