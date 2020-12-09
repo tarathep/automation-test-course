@@ -1,4 +1,4 @@
-# Workshop 2 Member backend
+# Workshop 8 Integration Member backend
 - จงสร้าง file test .robot ชื่อ workshop2.robot
 
 ## Pre-requisites

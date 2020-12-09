@@ -14,6 +14,3 @@ class Test_Calculator(unittest.TestCase):
 
     def testDivideFunction(self):
         self.assertEqual(divide(100,10), 10) 
-
-    
-    
