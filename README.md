@@ -17,6 +17,9 @@ Robot Framework is a generic open source automation framework. It can be used fo
 - How to Test API (Backend)
 - Create library Support robotframework
 
+## Assignment
+https://docs.google.com/spreadsheets/d/1RiJDPCKHO38ZiF-q0m1ROdPITpHu1YIRgM5VWLu3pho/edit?usp=sharing
+
 ## Copyright
 - Robot Framework itself is open source software released under Apache License 2.0
 - Python Copyright ©2001-2020.  Python Software Foundation
