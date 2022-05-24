@@ -1,4 +1,4 @@
-# automation-test-course ATDD with Robot Framework
+# Automation Test Course ATDD with Robot Framework
 Robot Framework is a generic open source automation framework. It can be used for test automation and robotic process automation
 ## Slide
 
